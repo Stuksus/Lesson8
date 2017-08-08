@@ -24,19 +24,18 @@ if ($decode[0]['question4'] == $_POST['question4']) {
 if ($decode[0]['question5'] == $_POST['question5']) {
     $n += 1;
 }
+$name47 = $_COOKIE['guestName'];
 $score = $score->Test_Score($n);
 $name = $_POST['name'];
 if (isset($_POST['OK'])) {
-    if (empty($_POST['name'])) {
-        echo '<h2>Вы не ввели свое имя!</h2>';
-    } else {
+
         echo "<h1>Правильных ответов $n из 5</h1>";
         echo "<form method=\"post\" action=\"list.php\"><input type=\"submit\" value=\"В главное меню\"></form>";
-        echo "<h2>$name, Ваша оценка: $score</h2>";
+        echo "<h2>$name47, Ваша оценка: $score</h2>";
         //  $diplome -> Gd_Generation($name,$score,$n);
 
 
-    }
+
 }
 
 
@@ -50,7 +49,6 @@ if (isset($_POST['OK'])) {
 </head>
 <body>
 <form method="post">
-    Ваше имя: <input name="name"><br>
     <p><b><?= $decode[1]['answer'] ?></b><Br>
         <input type="radio" name="question1" value="<?= $decode[0]["question1"] ?>"> <?= $decode[0]["question1"] ?><Br>
         <input type="radio" name="question1"
